@@ -1,4 +1,4 @@
-module github.com/StalkR/imdb
+module github.com/windblows95/imdb
 
 go 1.14
 
