@@ -71,7 +71,7 @@ func SearchTitle(c *http.Client, name string) ([]Title, error) {
 				Year: match.Year,
 				Type: match.Type,
 				Poster: Media{
-					URL: match.Image.ImageURL,
+					ContentURL: match.Image.ImageURL,
 				},
 			})
 		}
