@@ -129,6 +129,7 @@ var (
 	titleLanguageRE           = regexp.MustCompile(`<a[^>]*>([^<]+)</a>`)
 	titleNationalitiesRE      = regexp.MustCompile(`href="/search/title/?\?country_of_origin[^"]*"[^>]*>([^<]+)`)
 	titleSeasonCountRE        = regexp.MustCompile(`<select id="browse-episodes-season" aria-label="(\d+) seasons"`)
+	titleSeasonCount2RE       = regexp.MustCompile(`<span class="ipc-btn__text">(\d) Season</span></a>`)
 	titleEpisodeInformationRE = regexp.MustCompile(`<div data-testid="hero-subnav-bar-season-episode-numbers-section" class="[^"]*">S(\d+)[^E]*E(\d+)</div>`)
 	titleDescriptionRE        = regexp.MustCompile(`<meta property="og:description" content="(?:(?:Created|Directed) by .*?\w\w\.\s*)*(?:With .*?\w\w\.\s*)?([^"]*)`)
 	titlePosterRE             = regexp.MustCompile(`(?s)<div class="poster">\s*<a href="/title/tt\d+/mediaviewer/(rm\d+)[^"]*"[^>]*>\s*<img.*?src="([^"]+)"`)
@@ -222,6 +223,11 @@ func (t *Title) Parse(page []byte) error {
 		seasons := titleSeasonCountRE.FindSubmatch(page)
 		if len(seasons) > 1 {
 			t.SeasonCount, _ = strconv.Atoi(string(seasons[1]))
+		} else {
+			seasons = titleSeasonCount2RE.FindSubmatch(page)
+			if len(seasons) > 1 {
+				t.SeasonCount, _ = strconv.Atoi(string(seasons[1]))
+			}
 		}
 	} else if v.Type == "TVEpisode" {
 		episodeInfo := titleEpisodeInformationRE.FindSubmatch(page)

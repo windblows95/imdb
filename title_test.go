@@ -156,6 +156,26 @@ func TestTitle(t *testing.T) {
 			},
 		},
 		{
+			ID: "tt21831910",
+			want: Title{
+				ID:            "tt21831910",
+				URL:           "https://www.imdb.com/title/tt21831910",
+				Name:          "The Decameron",
+				Type:          "TVSeries",
+				Year:          2024,
+				RatingCount:   4319,
+				SeasonCount:   1,
+				Writers:       []Name{Name{ID: "nm6767020", URL: "https://www.imdb.com/name/nm6767020", FullName: "Kathleen Jordan"}},
+				Actors:        []Name{Name{ID: "nm0149447", URL: "https://www.imdb.com/name/nm0149447", FullName: "Amar Chadha-Patel"}, Name{ID: "nm3355536", URL: "https://www.imdb.com/name/nm3355536", FullName: "Leila Farzad"}, Name{ID: "nm6103482", URL: "https://www.imdb.com/name/nm6103482", FullName: "Lou Gala"}},
+				Rating:        "6.3",
+				Genres:        []string{"Comedy", "Drama", "History"},
+				Nationalities: []string{"United States"},
+				Languages:     []string{"English"},
+				Poster:        Media{ID: "rm1531016193", TitleID: "tt21831910", URL: "https://www.imdb.com/title/tt21831910/mediaviewer/rm1531016193", ContentURL: "https://m.media-amazon.com/images/M/MV5BNTI2YjliODQtOGU2OS00ZWI0LWFiZmMtNzdmNWZhN2FhNWFmXkEyXkFqcGc@._V1_.jpg"},
+				Description:   "Set in 1348 during the Black Death, the deadliest pandemic in human history, explores the timely themes of class systems, power struggles, and survival in a time of pandemic.",
+			},
+		},
+		{
 			ID: "tt0291830",
 			want: Title{
 				ID:       "tt0291830",
