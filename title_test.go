@@ -296,11 +296,12 @@ func TestTitle(t *testing.T) {
 		{
 			ID: "tt0900059",
 			want: Title{
-				ID:   "tt0900059",
-				URL:  "https://www.imdb.com/title/tt0900059",
-				Name: "Mayans",
-				Type: "TVEpisode",
-				Year: 2002,
+				ID:       "tt0900059",
+				URL:      "https://www.imdb.com/title/tt0900059",
+				Name:     "Mayans",
+				ParentID: "tt0883792",
+				Type:     "TVEpisode",
+				Year:     2002,
 				Writers: []Name{
 					Name{ID: "nm2422546", URL: "https://www.imdb.com/name/nm2422546", FullName: "Nick Greenaway"},
 					Name{ID: "nm0646855", URL: "https://www.imdb.com/name/nm0646855", FullName: "Harley Oliver"},
@@ -319,6 +320,7 @@ func TestTitle(t *testing.T) {
 				URL:           "https://www.imdb.com/title/tt0732901",
 				Name:          "Closer to the Heart",
 				Type:          "TVEpisode",
+				ParentID:      "tt0290988",
 				Year:          2003,
 				Rating:        "9.1",
 				RatingCount:   916,
